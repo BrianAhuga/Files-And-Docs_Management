@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "Upload Document";
+}
+
+<h2>Upload a Document</h2>
+
+@if (ViewBag.Error != null)
+{
+    <div class="error-message">@ViewBag.Error</div>
+}
+
+<form asp-action="Upload" method="post" enctype="multipart/form-data">
+    <div class="upload-container mt-5">
+        <label for="documentType">Select Document Type:</label>
+        <select id="documentType" name="documentType" required style="width: 300px;">
+            <option value="">-- Select Type --</option>
+            @foreach (var type in ViewBag.DocumentTypes)
+            {
+                <option value="@type">@type</option>
+            }
+        </select>
+
+        <br />
+
+        <input type="file" name="file" required />
+        <button type="submit" class="upload-button">Upload</button>
+    </div>
+</form>
+
+<link href="~/css/uploadview.css" rel="stylesheet" />

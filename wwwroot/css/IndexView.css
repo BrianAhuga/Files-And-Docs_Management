@@ -1,0 +1,102 @@
+﻿.document-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+    max-height: 80vh; /* Scrollable list */
+    overflow-y: auto; /* Enable scrolling */
+    background: #f7f9fc;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.document-card {
+    background: linear-gradient(145deg, #ffffff, #e6e6e6);
+    border: none;
+    border-radius: 12px;
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    animation: float 2s ease-in-out infinite alternate;
+    overflow: hidden;
+}
+
+    .document-card:hover {
+        transform: translateY(-5px) scale(1.05);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+        background: linear-gradient(145deg, #e6e6e6, #ffffff);
+    }
+
+    .document-card h4 {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+        color: #333;
+    }
+
+    .document-card iframe,
+    .document-card img {
+        border-radius: 8px;
+        margin-bottom: 10px;
+        max-width: 100%;
+        height: auto;
+        border: 1px solid #ddd;
+    }
+
+.document-actions {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+.open-button, .download-button {
+    display: inline-block;
+    padding: 8px 12px;
+    color: #fff;
+    background-color: #28a745;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.download-button {
+    background-color: #007bff;
+}
+
+.open-button:hover {
+    background-color: purple;
+    color: white;
+}
+
+.download-button:hover {
+    background-color: red;
+    color: white;
+}
+
+@keyframes float {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-10px);
+    }
+}
+
+.document-list::-webkit-scrollbar {
+    width: 10px;
+}
+
+.document-list::-webkit-scrollbar-thumb {
+    background: #b0b0b0;
+    border-radius: 10px;
+}
+
+    .document-list::-webkit-scrollbar-thumb:hover {
+        background: #888;
+    }
